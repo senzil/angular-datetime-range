@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html ng-app="ExampleApp">
+<head>
+  <title>Datetime range input UI element for AngularJS</title>
+  <link rel="stylesheet" type="text/css" href="dist/datetime-range.css">
+  <meta name="viewport" content="width=500,user-scalable=0">
+  <style>
+    body {
+      box-sizing: border-box;
+      width: 500px;
+      height: 100vh;
+      min-height: 100vh;
+      margin: 0;
+      padding: 15px;
+    }
+    input {
+     width: 100%;
+    }
+  </style>
+</head>
+<body ng-controller="MainCtrl">
+<label for="timezoneSelect">Timezone select: </label>
+<select ng-model="timezone" name="timezoneSelect" ng-options="timezone for timezone in timezones"></select>
+<hr>
+  <datetime-range ng-model="range" timezone="timezone" limits-range="limits" on-change="changed()" on-change-start="changedStart()" on-change-end="changedEnd()" on-close="closed()"></datetime-range>
+<hr>
+
+  <time-range ng-model="timerange" limits-range="timelimits" on-change="changed()" on-change-start="changedStart()" on-change-end="changedEnd()" on-close="closed()"></time-range>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js" charset="utf-8"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment-with-locales.min.js" charset="utf-8"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.13/moment-timezone-with-data.min.js" charset="utf-8"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-range/3.0.3/moment-range.js" charset="utf-8"></script>
+
+  <script>
+    angular.module('ExampleApp', ['senzil.datetime-range']).
+      controller('MainCtrl', function ($scope) {
+        $scope.timezones = moment.tz.names();
+        $scope.timezone = moment.tz.guess();
+        $scope.range= null;
+        $scope.limits = moment.range(moment.tz(), moment.tz().add(1, 'h'));
+
+        $scope.timerange = null;
+        $scope.timelimits = moment.range(moment.tz().add(-1, 'h'), moment.tz().add(1, 'h'));
+
+        $scope.changed = function () {
+          console.log('changed start or end datetime objects');
+          console.log('datetime range', $scope.range);
+          console.log('time range', $scope.timerange);
+        };
+        $scope.changedStart = function () {
+          console.log('changed start datetime object');
+        };
+        $scope.changedEnd = function () {
+          console.log('changed end datetime object');
+        };
+        $scope.closed = function () {
+          console.log('edit popover closed');
+        };
+      });
+  </script>
+<script src="dist/datetime-range.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,73 @@
+{
+  "name": "@senzil/angular-datetime-range",
+  "version": "1.0.0",
+  "description": "UI widget for datetime range input, converted to an angular directive for your convenience.",
+  "main": "index.js",
+  "dependencies": {
+    "angular": "^1.6.5",
+    "moment": "^2.18.1",
+    "moment-range": "^3.0.3",
+    "moment-timezone": "^0.5.13"
+  },
+  "devDependencies": {
+    "babel-core": "^6.25.0",
+    "babel-preset-env": "^1.6.0",
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-angular-embed-templates": "^2.3.0",
+    "gulp-babel": "^6.1.2",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-debug": "^3.1.0",
+    "gulp-load-plugins": "^1.5.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-uglify": "^3.0.0",
+    "run-sequence": "^2.0.0",
+    "webpack": "^3.0.0",
+    "webpack-stream": "^3.2.0"
+  },
+  "peerDependencies": {
+    "angular": ">1.4.0",
+    "moment": ">2.0.0",
+    "moment-timezone": ">0.5.0",
+    "moment-range": ">3.0.0"
+  },
+  "scripts": {
+    "build": "gulp build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/senzil/angular-datetime-range.git"
+  },
+  "keywords": [
+    "angular",
+    "angularjs",
+    "directive",
+    "date",
+    "time",
+    "datetime",
+    "range",
+    "daterange",
+    "datepair",
+    "input",
+    "picker",
+    "dateinput",
+    "timeinput"
+  ],
+  "author": {
+    "name": "SENZIL SRL",
+    "email": "contact@senzil.com",
+    "web": "https://www.senzil.com"
+  },
+  "collaborators": [
+    {
+      "name": "Pablo González",
+      "email": "pablodgonzalez@gmail.com",
+      "web": "https://github.com/pablodgonzalez"
+    }
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/senzil/angular-datetime-range/issues"
+  },
+  "homepage": "https://github.com/senzil/angular-datetime-range#readme"
+}
