@@ -183,10 +183,10 @@ angular.module('senzil.datetime-range').
 
           // Callbacks fired on change of start and/or end datetime objects
           scope.callback = function () {
-            if ( !!scope.onChangeStart && scope.selected === scope.start ) {
+            if ( !!scope.onChangeStart && scope.selected === scope.ngModel.start ) {
               scope.onChangeStart();
             }
-            if ( !!scope.onChangeEnd && scope.selected === scope.end ) {
+            if ( !!scope.onChangeEnd && scope.selected === scope.ngModel.end ) {
               scope.onChangeEnd();
             }
             if ( !!scope.onChange ) {
@@ -197,7 +197,9 @@ angular.module('senzil.datetime-range').
           // Close edit popover
           scope.close = function () {
             scope.selected = null;
-            scope.onClose();
+            if(scope.onClose) {
+              scope.onClose();
+            }
           };
 
           // Bind click events outside directive to close edit popover
@@ -404,10 +406,10 @@ directive('datetimeRange', ['$document', '$timeout', 'moment', function ($docume
 
           // Callbacks fired on change of start and/or end datetime objects
           scope.callback = function () {
-            if ( !!scope.onChangeStart && scope.selected.isSame(scope.ngModel.start) ) {
+            if ( !!scope.onChangeStart && scope.selected === scope.ngModel.start) {
               scope.onChangeStart();
             }
-            if ( !!scope.onChangeEnd && scope.selected.isSame(scope.ngModel.end) ) {
+            if ( !!scope.onChangeEnd && scope.selected === scope.ngModel.end) {
               scope.onChangeEnd();
             }
             if ( !!scope.onChange ) {
