@@ -18,14 +18,8 @@ gulp.task('build:webpack', () => gulp.src('.tmp/*.js')
       externals: {
         "angular": "angular",
         "moment": "moment",
-        "moment-range": {
-          root: "moment-range",
-          umd: "moment-range"
-        },
-        "moment-timezone": {
-          root: "moment-timezone",
-          umd: "moment-timezone"
-        }
+        "moment-range": "moment-range",
+        "moment-timezone": "moment-timezone"
       }
     }))
     .pipe(plugins.uglify())
@@ -42,14 +36,8 @@ gulp.task('build:webpack:dev', () => gulp.src('.tmp/*.js')
     externals: {
       "angular": "angular",
       "moment": "moment",
-      "moment-range": {
-        root: "moment-range",
-        umd: "moment-range"
-      },
-      "moment-timezone": {
-        root: "moment-timezone",
-        umd: "moment-timezone"
-      }
+      "moment-range": "moment-range",
+      "moment-timezone": "moment-timezone"
     }
   }))
   .pipe(gulp.dest('dist'))
