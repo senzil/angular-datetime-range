@@ -12,9 +12,21 @@ gulp.task('build:webpack', () => gulp.src('.tmp/*.js')
     .pipe(plugins.plumber())
     .pipe(webpack({
       output: {
-        filename: 'datetime-range.js'
+        filename: 'datetime-range.min.js',
+        libraryTarget: 'umd'
         },
-      externals: ['angular', 'moment', 'moment-range', 'moment-timezone']
+      externals: {
+        "angular": "angular",
+        "moment": "moment",
+        "moment-range": {
+          root: "moment-range",
+          umd: "moment-range"
+        },
+        "moment-timezone": {
+          root: "moment-timezone",
+          umd: "moment-timezone"
+        }
+      }
     }))
     .pipe(plugins.uglify())
     .pipe(gulp.dest('dist'))
@@ -54,7 +66,9 @@ gulp.task('build:babel', () => gulp.src('src/*.js')
 gulp.task('build:css', () => gulp.src('src/*.css')
   .pipe(plugins.plumber())
   .pipe(plugins.cssnano())
-  .pipe(gulp.dest('dist')));
+  .pipe(plugins.concat('datetime-range.min.css'))
+  .pipe(gulp.dest('dist')))
+  .on('error', function (err) { console.error(err); });
 
 gulp.task('build:dev', () => {
   gulp.src('src/*.css')

@@ -20,8 +20,8 @@ Click <a href="https://rawgit.com/senzil/angular-datetime-range/master/" target=
 npm install @senzil/angular-datetime-range
 yarn add @senzil/angular-datetime-range
     
-https://cdn.rawgit.com/senzil/angular-datetime-range/v1.0.0/dist/datetime-range.js
-https://cdn.rawgit.com/senzil/angular-datetime-range/v1.0.0/dist/datetime-range.css
+https://cdn.rawgit.com/senzil/angular-datetime-range/v1.0.0/dist/datetime-range.min.js
+https://cdn.rawgit.com/senzil/angular-datetime-range/v1.0.0/dist/datetime-range.min.css
 ```
 
 #####2) Prerequisites

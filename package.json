@@ -16,6 +16,7 @@
     "gulp": "^3.9.1",
     "gulp-angular-embed-templates": "^2.3.0",
     "gulp-babel": "^6.1.2",
+    "gulp-concat": "^2.6.1",
     "gulp-cssnano": "^2.1.2",
     "gulp-debug": "^3.1.0",
     "gulp-load-plugins": "^1.5.0",
@@ -32,7 +33,9 @@
     "moment-range": ">3.0.0"
   },
   "scripts": {
-    "build": "gulp build"
+    "build": "gulp build",
+    "preversion": "gulp build",
+    "prepublish": "gulp build"
   },
   "repository": {
     "type": "git",

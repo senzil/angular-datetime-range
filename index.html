@@ -2,7 +2,7 @@
 <html ng-app="ExampleApp">
 <head>
   <title>Datetime range input UI element for AngularJS</title>
-  <link rel="stylesheet" type="text/css" href="dist/datetime-range.css">
+  <link rel="stylesheet" type="text/css" href="dist/datetime-range.min.css">
   <meta name="viewport" content="width=500,user-scalable=0">
   <style>
     body {
@@ -32,7 +32,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment-with-locales.min.js" charset="utf-8"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.13/moment-timezone-with-data.min.js" charset="utf-8"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-range/3.0.3/moment-range.js" charset="utf-8"></script>
-
+  <script src="dist/datetime-range.min.js"></script>
   <script>
     angular.module('ExampleApp', ['senzil.datetime-range']).
       controller('MainCtrl', function ($scope) {
@@ -60,7 +60,5 @@
         };
       });
   </script>
-<script src="dist/datetime-range.js"></script>
-
 </body>
 </html>
